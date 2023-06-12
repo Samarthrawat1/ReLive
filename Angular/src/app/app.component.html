@@ -1,0 +1,33 @@
+<div *ngIf="currentPage === 'landing'">
+  <nav>
+    <div class="logo">
+      <img src="./assets/logo.jpeg" alt="Logo" />
+    </div>
+    <div class="navbar-icons">
+      <a href="#" (click)="goToTeamSection()" class="team-link">Our Team</a>
+      <a href="#" class="user-icon"></a>
+    </div>
+  </nav>
+  <div class="landing-content">
+    <div class="text-content">
+      <h1>Breathing Life Into Memories</h1>
+      <h2>
+        <span class="subheading-orange">ReLive</span> will help you to interact
+        with your loved ones and keeping their memories alive.
+      </h2>
+      <button (click)="goToFormsPage()">Get Started</button>
+    </div>
+    <div class="illustration">
+      <img src="./assets/Illus.jpeg" alt="Illustration" />
+    </div>
+  </div>
+  <div class="team-section" id="team-section">
+    <div class="team-card" *ngFor="let member of teamMembers">
+      <img [src]="member.picture" alt="Team Member" />
+      <h3>{{ member.name }}</h3>
+      <p>{{ member.role }}</p>
+    </div>
+  </div>
+</div>
+
+<app-forms *ngIf="currentPage === 'forms'"></app-forms>
