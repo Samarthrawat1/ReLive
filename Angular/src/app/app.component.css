@@ -99,27 +99,22 @@
   justify-content: center;
   margin-top: 40px;
 }
-.our-team {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 50px;
-  padding: 20px;
-}
 
 .team-card {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #3c2f27; 
+  color: white;
   border-radius: 10px;
   padding: 20px;
   width: 250px;
-  backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
+  margin: 10px;
 }
 
 .team-card:hover {
   transform: translateY(-5px);
 }
+
 
 .team-card img {
   width: 150px;
