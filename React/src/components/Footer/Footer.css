@@ -1,0 +1,22 @@
+.Footer-Container {
+  position: relative;
+}
+
+.Footer-Container > hr {
+  border: 1px solid var(--lightgray);
+}
+
+.Logo {
+  display: flex;
+  justify-content: center;
+}
+
+.Logo > img {
+  width: 10rem;
+}
+
+.footer-blur {
+  width: 80rem;
+  height: 20rem;
+  right: 0;
+}
