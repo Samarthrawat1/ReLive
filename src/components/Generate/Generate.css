@@ -1,0 +1,92 @@
+.Generate {
+  display: flex;
+  padding: 0 2rem;
+  gap: 10rem;
+}
+
+.left-g {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.left-g > hr {
+  position: absolute;
+  width: 10.5rem;
+  border: 2px solid var(--orange);
+  border-radius: 20%;
+  margin: -20px 0;
+}
+
+.left-g > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.right-j {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* .generate-container {
+  display: flex;
+  background-color: rgb(77, 75, 75);
+  padding: 1 rem;
+  width: 25rem;
+  height: 10rem;
+  padding-top: 10px;
+  padding-left: 20px;
+  flex-direction: column;
+} */
+
+input[type="file"] {
+  color: rgba(0, 0, 0, 0);
+}
+
+.form-input {
+  background-color: rgb(72, 71, 71);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.label-name {
+  letter-spacing: 1px;
+  margin-right: 10px;
+  color: rgb(231, 221, 221);
+  font-size: 1rem;
+}
+
+.input-btn {
+  width: 15rem;
+}
+
+.input-instruction {
+  letter-spacing: 1px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.btn-g {
+  margin-left: 1rem;
+  background-color: var(--orange);
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.generate-blur {
+  width: 40rem;
+  height: 30rem;
+  right: 0;
+}
+
+.input-btn-personality {
+  padding: 5px;
+  border-radius: 30px;
+  width: 13rem;
+}
