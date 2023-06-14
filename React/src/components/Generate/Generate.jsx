@@ -138,6 +138,9 @@ function Generate() {
   // }
 
   // const Generate = () => {
+  function handleGenerate() {
+    console.log("Generate button clicked!");
+  }
   return (
     <div className="Generate">
       <div className="left-g">
@@ -239,7 +242,9 @@ function Generate() {
               Any personality trait like old, sweet, etc.
             </p>
           </div> */}{" "}
-          <button className="btn btn-g">Generate</button>
+          <button className="btn btn-g" onClick={handleGenerate}>
+            Generate
+          </button>
         </div>
       </div>
     </div>
