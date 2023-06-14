@@ -22,10 +22,15 @@ function Generate() {
       document.getElementById("imageInput").files[0]
     );
 
+    var imageID;
+
     promise.then(
       function (response) {
         console.log(response); // Success
         alert("Image uploaded successfully!");
+
+        imageID = response.$id;
+        console.log(imageID);
       },
       function (error) {
         console.log(error); // Failure
@@ -44,17 +49,21 @@ function Generate() {
       return;
     }
 
-    // Upload file to Appwrite storage
     const promise = storage.createFile(
       "Audio-AI",
       uuidv4(),
       document.getElementById("audioInput").files[0]
     );
 
+    var audioID;
+
     promise.then(
       function (response) {
         console.log(response); // Success
         alert("Audio uploaded successfully!");
+
+        audioID = response.$id;
+        console.log(audioID);
       },
       function (error) {
         console.log(error); // Failure
@@ -93,40 +102,40 @@ function Generate() {
     );
   }
 
-  const [personalityTraits, setPersonalityTraits] = useState([]);
-  const [newTrait, setNewTrait] = useState("");
+  // const [personalityTraits, setPersonalityTraits] = useState([]);
+  // const [newTrait, setNewTrait] = useState("");
 
-  function removePersonalityTrait(index) {
-    const updatedTraits = personalityTraits.filter((_, i) => i !== index);
-    setPersonalityTraits(updatedTraits);
-  }
+  // function removePersonalityTrait(index) {
+  //   const updatedTraits = personalityTraits.filter((_, i) => i !== index);
+  //   setPersonalityTraits(updatedTraits);
+  // }
 
-  function addPersonalityTrait() {
-    if (newTrait.trim() !== "") {
-      setPersonalityTraits([...personalityTraits, newTrait.trim()]);
-      setNewTrait("");
+  // function addPersonalityTrait() {
+  //   if (newTrait.trim() !== "") {
+  //     setPersonalityTraits([...personalityTraits, newTrait.trim()]);
+  //     setNewTrait("");
 
-      // Store the personality trait in the Appwrite database
-      const promise = database.createDocument(
-        "Personality-AI",
-        "Traits-AI",
-        uuidv4(),
-        {
-          trait: personalityInput.trim(),
-        }
-      );
+  //     // Store the personality trait in the Appwrite database
+  //     const promise = database.createDocument(
+  //       "Personality-AI",
+  //       "Traits-AI",
+  //       uuidv4(),
+  //       {
+  //         trait: personalityInput.trim(),
+  //       }
+  //     );
 
-      promise.then(
-        function (response) {
-          console.log(response); // Success
-        },
-        function (error) {
-          console.log(error); // Failure
-          alert("Failed to store the personality trait");
-        }
-      );
-    }
-  }
+  //     promise.then(
+  //       function (response) {
+  //         console.log(response); // Success
+  //       },
+  //       function (error) {
+  //         console.log(error); // Failure
+  //         alert("Failed to store the personality trait");
+  //       }
+  //     );
+  //   }
+  // }
 
   // const Generate = () => {
   return (
@@ -160,7 +169,6 @@ function Generate() {
               Upload
             </button>
           </div>
-
           <div className="form-input">
             <label className="label-name" htmlFor="audioInput">
               Choose Audio:
@@ -176,7 +184,6 @@ function Generate() {
               Upload
             </button>
           </div>
-
           <div className="form-input">
             <label className="label-name" htmlFor="chatInput">
               Upload Chats:
@@ -193,8 +200,7 @@ function Generate() {
             </button>
             <p className="input-instruction">Export the chat as a .txt file.</p>
           </div>
-
-          <div className="form-input">
+          {/* <div className="form-input">
             <label className="label-name" htmlFor="personalityInput">
               Personality Traits:
             </label>
@@ -215,7 +221,7 @@ function Generate() {
               {/* <button className="generate-button" onClick={handleUpload}>
                 Upload
               </button> */}
-              <div className="personality-tags">
+          {/* <div className="personality-tags">
                 {personalityTraits.map((trait, index) => (
                   <div className="tag" key={index}>
                     {trait}
@@ -232,7 +238,7 @@ function Generate() {
             <p className="input-instruction">
               Any personality trait like old, sweet, etc.
             </p>
-          </div>
+          </div> */}{" "}
           <button className="btn btn-g">Generate</button>
         </div>
       </div>
